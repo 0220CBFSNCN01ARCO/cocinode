@@ -42,7 +42,7 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		idUsuario: {
 			type: DataTypes.INTEGER(11),
-			allowNull: false,
+			allowNull: true,
 			references: {
 				model: 'Usuario',
 				key: 'id'
@@ -50,11 +50,12 @@ module.exports = function(sequelize, DataTypes) {
 			field: 'idUsuario'
 		}
 	}, {
-		tableName: 'articulos'
+		tableName: 'articulos',
+		timestamps: false
     });
     
     // Asociacion
-    Articulo.associate = function(models) {
+/*    Articulo.associate = function(models) {
         // models == TODOS LOS MODELOS
         Articulo.hasMany(models.Comentario, {
             // as == alias de la relacion - asociación
@@ -74,7 +75,7 @@ module.exports = function(sequelize, DataTypes) {
             foreignKey: 'idArticulo',
             otherKey: 'idCategoria'
         });
-    }
+    }*/
 
     return Articulo;
 };
