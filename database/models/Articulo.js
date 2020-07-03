@@ -55,7 +55,7 @@ module.exports = function(sequelize, DataTypes) {
     });
     
     // Asociacion
-/*    Articulo.associate = function(models) {
+    Articulo.associate = function(models) {
         // models == TODOS LOS MODELOS
         Articulo.hasMany(models.Comentario, {
             // as == alias de la relacion - asociación
@@ -75,7 +75,7 @@ module.exports = function(sequelize, DataTypes) {
             foreignKey: 'idArticulo',
             otherKey: 'idCategoria'
         });
-    }*/
+    }
 
     return Articulo;
 };

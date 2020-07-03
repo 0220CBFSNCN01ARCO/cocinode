@@ -6,9 +6,11 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const methodOverride = require('method-override')
 
 var app = express();
-require('dotenv').config()
+require('dotenv').config();
+app.use(methodOverride('_method'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
